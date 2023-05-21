@@ -1,2 +1,5 @@
 # Ignore local env files
 graphql-env/*
+
+# Ignore pycache
+**/__pycache__/*
