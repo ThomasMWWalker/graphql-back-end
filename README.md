@@ -1,5 +1,5 @@
 # graphql-back-end
-A basic implementation of a Django web applicaiton exposing a GraphQL endpoint at ```/graphql```.
+A basic implementation of a Django web applicaiton exposing a GraphQL endpoint at ```/graphql```. The implementation has been done with Python 3.10.8, with the requirements detailed in ```requirements.txt```.
 
 ## Admin access
 A super user has been registered with the following credentials: 
