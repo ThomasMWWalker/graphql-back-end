@@ -3,10 +3,12 @@ from graphene_django import DjangoObjectType # DjangoObjectType allows us to map
 
 from .models import Person, Address # import the models we created
 
+
 # Create GraphQL types for each model
 class AddressType(DjangoObjectType):
     class Meta:
         model = Address
+
 
 class PersonType(DjangoObjectType):
     class Meta:
@@ -24,6 +26,7 @@ class Query(graphene.ObjectType):
     # We are using select_related() to perform a join between the Person and Address tables to improve performance
     def resolve_people(self, info):
         return Person.objects.select_related('address').all()
+
 
 # Create a schema for the query
 schema = graphene.Schema(query=Query)

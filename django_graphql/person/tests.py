@@ -1,7 +1,8 @@
 from django.test import TestCase
-from .models import Person, Address
 import json
 from graphene_django.utils.testing import GraphQLTestCase
+
+from .models import Person, Address # import the models we created
 from .schema import schema
 
 
@@ -16,6 +17,7 @@ class AddressModelTest(TestCase):
         self.assertEqual(self.address.city, 'Test City')
         self.assertEqual(self.address.state, 'NSW')
 
+
 # Test the creation and attributes of a Person instance and the associated Address
 class AddressPersonModelTest(TestCase):
     def setUp(self):
@@ -26,6 +28,7 @@ class AddressPersonModelTest(TestCase):
         self.assertEqual(self.person.email, 'test@email.com')
         self.assertEqual(self.person.name, 'Test Name')
         self.assertEqual(self.person.address, self.address)
+
 
 # Tests the functionality of the GraphQL endpoint, using the schema defined in .schema
 class PeopleGraphQLTest(GraphQLTestCase):

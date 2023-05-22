@@ -21,6 +21,7 @@ class Address(models.Model):
     '''
     Address model to store information about an address
     '''
+
     STATE_CHOICES = [(state.name, state.value) for state in AustralianStateEnum]
 
     # Fields
@@ -37,7 +38,6 @@ class Address(models.Model):
         String representation of an address instance
         '''
         return f'{self.number} {self.street}, {self.city}, {self.state}'
-
 
 
 class Person(models.Model):
@@ -58,3 +58,4 @@ class Person(models.Model):
         String representation of an person instance
         '''
         return f'{self.email}, {self.name}'
+    

@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-
 from graphene_django.views import GraphQLView
 
-from person.schema import schema as person_schema
+from person.schema import schema as person_schema # import the Person schema
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
